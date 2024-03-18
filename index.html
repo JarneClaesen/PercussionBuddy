@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percussion Instruments Search</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        .custom-rounded {
+            border-radius: 25px; /* More pronounced rounded corners */
+        }
+        .reduced-padding {
+            padding-bottom: 0.5rem !important; /* Reduced padding at the bottom */
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarRightAlignExample" aria-controls="navbarRightAlignExample" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="add-instrument.html">Add Instrument</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container my-5">
+    <div class="card custom-rounded" style="background-color: #f8f9fa;">
+        <div class="card-body reduced-padding">
+            <div class="input-group mb-3">
+                <span class="input-group-text border-0" id="search-addon"><i class="fas fa-search"></i></span>
+                <input type="text" class="form-control" id="search-input" placeholder="Search instruments..." aria-label="Search" aria-describedby="search-addon">
+            </div>
+        </div>
+    </div>
+    <div id="search-results" class="search-results"></div>
+    <div id="instrument-details" class="instrument-details"></div>
+</div>
+
+<div class="container">
+    <div class="text-center">
+        <button id="enable-notifications" class="btn btn-primary">Enable Notifications</button>
+        <button id="install-button" class="btn btn-primary" style="display: none;">Install App</button>
+    </div>
+</div>
+
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js"></script>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
